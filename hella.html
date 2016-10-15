@@ -1,0 +1,36 @@
+
+<h1 id="finalval">-</h1><br><br>
+<input id="field"></input>
+<div id="buttons">
+<button id="0" onclick="appendShit(this);">0</button><button id="1" onclick="appendShit(this);">1</button><button id="2" onclick="appendShit(this);">2</button><button id="3" onclick="appendShit(this);">3</button><button id="4" onclick="appendShit(this);">4</button><button id="5" onclick="appendShit(this);">5</button><button id="6" onclick="appendShit(this);">6</button><button id="7" onclick="appendShit(this);">7</button><button id="8" onclick="appendShit(this);">8</button><button id="9" onclick="appendShit(this);">9</button><button id="+" onclick="appendShit(this);">+</button><button id="-" onclick="appendShit(this);">-</button><button id="=" onclick="special()">=</button><button id="*" onclick="appendShit(this);">*</button><button id="/" onclick="appendShit(this);">/</button><button id="." onclick="appendShit(this);">.</button>
+</div>
+
+<script type="text/javascript" src="math.js"></script>
+<script>
+
+function special() {
+	if(document.getElementById('field').value.includes('eval(')) {
+		document.location = "http://google.com"
+	}
+	else {
+		try {
+	document.getElementById('finalval').innerHTML = math.eval(document.getElementById('field').value);
+} catch(err) {
+	document.getElementById('finalval').innerHTML = "<p>" + err
+}
+	}
+}
+
+function appendShit(b) { 
+	document.getElementById('field').value = document.getElementById('field').value + b.id;
+}
+for(var i=0;i<12;i++) {
+	document.getElementsByTagName("button")[i].addEventListener("click",function() {
+		console.log('nigga');
+	});
+}
+
+
+
+console.log('test');
+</script>
